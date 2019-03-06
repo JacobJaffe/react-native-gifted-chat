@@ -69,7 +69,7 @@ export class Avatar extends React.Component<AvatarProps> {}
 interface BubbleProps<TMessage extends IMessage = IMessage> {
   user: User;
   touchableProps?: object;
-  onLongPress?(context?: any, message?: any): void;
+  onPress?(context?: any, message?: any): void;
   renderMessageImage?(
     messageImageProps: RenderMessageImageProps,
   ): React.ReactNode;
@@ -181,7 +181,7 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
   /*Custom system message */
   renderSystemMessage?(props: SystemMessageProps): React.ReactNode;
   /* Callback when a message bubble is long-pressed; default is to show an ActionSheet with "Copy Text" (see example using showActionSheetWithOptions()) */
-  onLongPress?(context: any, message: any): void;
+  onPress?(context: any, message: any): void;
   /* Reverses display order of messages; default is true */
   inverted?: boolean;
   /*Custom message container */

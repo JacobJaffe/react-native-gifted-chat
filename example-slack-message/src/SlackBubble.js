@@ -20,12 +20,12 @@ export default class Bubble extends React.Component {
 
   constructor(props) {
     super(props);
-    this.onLongPress = this.onLongPress.bind(this);
+    this.onPress = this.onPress.bind(this);
   }
 
-  onLongPress() {
-    if (this.props.onLongPress) {
-      this.props.onLongPress(this.context);
+  onPress() {
+    if (this.props.onPress) {
+      this.props.onPress(this.context);
     } else if (this.props.currentMessage.text) {
       const options = [
         'Copy Text',
@@ -145,7 +145,7 @@ export default class Bubble extends React.Component {
     return (
       <View style={[styles.container, this.props.containerStyle]}>
         <TouchableOpacity
-          onLongPress={this.onLongPress}
+          onPress={this.onPress}
           accessibilityTraits="text"
           {...this.props.touchableProps}
         >
@@ -231,7 +231,7 @@ Bubble.contextTypes = {
 
 Bubble.defaultProps = {
   touchableProps: {},
-  onLongPress: null,
+  onPress: null,
   renderMessageImage: null,
   renderMessageText: null,
   renderCustomView: null,
@@ -252,7 +252,7 @@ Bubble.defaultProps = {
 
 Bubble.propTypes = {
   touchableProps: PropTypes.object,
-  onLongPress: PropTypes.func,
+  onPress: PropTypes.func,
   renderMessageImage: PropTypes.func,
   renderMessageText: PropTypes.func,
   renderCustomView: PropTypes.func,
